@@ -1,5 +1,5 @@
 package org.example;
-import org.junit.Test;
+import org.junit.*;
 
 import static org.junit.Assert.*;
 
@@ -21,7 +21,6 @@ public class tests {
         // Verify the displayed nutritional information matches the expected data
         assertEquals(expectedNutritionalInfo, plan.getNutritionalInfo());
     }
-
 
     @Test
     public void testMealPlanGeneration() {
