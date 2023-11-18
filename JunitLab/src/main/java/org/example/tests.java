@@ -36,6 +36,47 @@ public class tests {
         assertEquals(foods, plan.getItems());
     }
 
+    @Test
+    public void testGenerateMealPlan() {
+        MealPlan Plan = new MealPlan();
+        String userPreferences = "Vegetarian";
+        int calorieGoal = 1500;
+
+        // Generate a meal plan
+        boolean success = Plan.generateMealPlan(userPreferences, calorieGoal);
+
+        // Verify that a meal plan is generated successfully based on the user's preferences
+        assertTrue(success);
+
+
+    }
+
+    @Test
+    public void testBudget(){
+        Budgetting budget = new Budgetting();
+        double amount = 50;
+        budget.accessBudgetPlan();
+        Boolean succesScenario = budget.setBudget(amount);
+
+        //verifies the budget plan
+        assertTrue(succesScenario);
+
+
+    }
+
+    @Test
+    public void testUpdateProfile(){
+        User profile = new User("Rayan", 25, "Vegan");
+        //logging in with username and password
+        profile.login("rayan123", "password123");
+        profile.updatePreferances("Atkins_diet");
+        profile.updateAge(27);
+
+
+        assertEquals("Atkins_diet", profile.getPreferances());
+        assertEquals(27, profile.getAge());
+
+    }
 
 }
 
