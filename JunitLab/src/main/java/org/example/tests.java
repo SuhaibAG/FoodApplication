@@ -72,7 +72,7 @@ public class tests {
         profile.updatePreferances("Atkins_diet");
         profile.updateAge(27);
 
-
+        //comment for thing
         assertEquals("Atkins_diet", profile.getPreferances());
         assertEquals(27, profile.getAge());
 
