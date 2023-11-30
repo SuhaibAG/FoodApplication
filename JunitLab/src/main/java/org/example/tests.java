@@ -52,8 +52,9 @@ public class tests {
 
     @Test
     public void testUpdateProfile(){
-        User profile = new User("Rayan", 25, 180,78,"Vegan");
+        User profile = new User("Rayan", 25, 1.8,78,"Vegan");
         Account acc = new Account("rayan123", "password123");
+
         //logging in with username and password
         acc.login("rayan123", "password123");
         profile.updatePreferances("Atkins_diet");
@@ -63,6 +64,18 @@ public class tests {
         assertEquals("Atkins_diet", profile.getPreferances());
         assertEquals(27, profile.getAge());
 
+    }
+    @Test
+    public void testCalculator() {
+        User Calculator = new User("Rayan", 25, 1.8,78,"Default");
+
+        // Test calculateBMI method
+        Calculator.calculateBMI(Calculator.getWeight(),Calculator.getHeight());
+        assertEquals(22.86, Calculator.getBmi(), 0.01); // we used delta for floating-point precision
+
+        // Test calculateCalories method
+        Calculator.calculateCalories(Calculator.getWeight(),Calculator.getHeight(), Calculator.getAge());
+        assertEquals(1768.0, Calculator.getCalories(), 0.01); //same here
     }
 
 }
