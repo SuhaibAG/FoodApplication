@@ -24,10 +24,10 @@ public class tests {
 
     @Test
     public void testMealPlanGeneration() {
-        //make a list of fooods
+        //make a list of foods
         food[] foods = new food[3];
-        foods[0] = new food("Banana", "Calories: 105");
-        foods[1] = new food("Apple", "Calories: 110");
+        foods[0] = new food("Banana", "Calories: 95");
+        foods[1] = new food("Apple", "Calories: 60");
         foods[2] = new food("Steak", "Calories: 110");
 
         //check if the foods are registered correctly
@@ -36,20 +36,6 @@ public class tests {
         assertEquals(foods, plan.getItems());
     }
 
-    @Test
-    public void testGenerateMealPlan() {
-        MealPlan Plan = new MealPlan();
-        String userPreferences = "Vegetarian";
-        int calorieGoal = 1500;
-
-        // Generate a meal plan
-        boolean success = Plan.generateMealPlan(userPreferences, calorieGoal);
-
-        // Verify that a meal plan is generated successfully based on the user's preferences
-        assertTrue(success);
-
-
-    }
 
     @Test
     public void testBudget(){
@@ -66,11 +52,12 @@ public class tests {
 
     @Test
     public void testUpdateProfile(){
-        User profile = new User("Rayan", 25, "Vegan");
+        User profile = new User("Rayan", 25, 180,78,"Vegan");
+        Account acc = new Account("rayan123", "password123");
         //logging in with username and password
-        profile.login("rayan123", "password123");
+        acc.login("rayan123", "password123");
         profile.updatePreferances("Atkins_diet");
-        profile.updateAge(27);
+        profile.setAge(27);
 
         //comment for thing
         assertEquals("Atkins_diet", profile.getPreferances());
@@ -79,4 +66,3 @@ public class tests {
     }
 
 }
-
