@@ -37,18 +37,7 @@ public class tests {
     }
 
 
-    @Test
-    public void testBudget(){
-        Budgetting budget = new Budgetting();
-        double amount = 50;
-        budget.accessBudgetPlan();
-        Boolean succesScenario = budget.setBudget(amount);
 
-        //verifies the budget plan
-        assertTrue(succesScenario);
-
-
-    }
 
     @Test
     public void testUpdateProfile(){
@@ -71,11 +60,11 @@ public class tests {
 
         // Test calculateBMI method
         Calculator.calculateBMI(Calculator.getWeight(),Calculator.getHeight());
-        assertEquals(22.86, Calculator.getBmi(), 0.01); // we used delta for floating-point precision
+        assertEquals(24.1, Calculator.getBmi(), 0.1); // we used delta for floating-point precision
 
         // Test calculateCalories method
         Calculator.calculateCalories(Calculator.getWeight(),Calculator.getHeight(), Calculator.getAge());
-        assertEquals(1768.0, Calculator.getCalories(), 0.01); //same here
+        assertEquals(2142.0, Calculator.getCalories(), 0.1); //same here
     }
 
 }

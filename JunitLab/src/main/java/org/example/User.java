@@ -57,15 +57,14 @@ public class User {
         return dieteryPreference;
     }
 
-    public void setDieteryPreference(String dieteryPreference) {
+    public void updatePreferances(String dieteryPreference) {
         this.dieteryPreference = dieteryPreference;
     }
 
-    public void updatePreferances(String atkins_diet) {
-    }
+
 
     public String getPreferances() {
-        return getPreferances();
+        return dieteryPreference;
     }
 
     // Function to calculate BMI and set the instance variable
